@@ -1,0 +1,97 @@
+PALINDROME CHECKING IN STRING
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	 Scanner sc=new Scanner(System.in);
+	 String a=sc.nextLine();
+	 int n=a.length();
+	 String reverse="";
+	 for(int i=n-1;i>=0;i--){
+	     reverse += a.charAt(i);
+	    
+	 }
+	  System.out.println(reverse);
+	  if(reverse.equals(a)){
+	      System.out.println("it is palindrome");
+	  }
+	  else{
+	      System.out.println("not a palindrome");
+	  }
+	}
+}
+
+PALINDROME USING STRING BUILDER
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	 Scanner sc=new Scanner(System.in);
+	 String a=sc.nextLine();
+	
+	 String reversed = new StringBuilder(a).reverse().toString();
+	 
+	  System.out.println(reversed);
+	  if(reversed.equals(a)){
+	      System.out.println("it is palindrome");
+	  }
+	  else{
+	      System.out.println("not a palindrome");
+	  }
+	}
+}
+
+
+PALINDROME WITHOUT BUILTIN FUNCTION
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        int n = a.length();
+        
+        char[] reverseArray = new char[n];
+        for (int i = 0; i < n; i++) {
+            reverseArray[i] = a.charAt(n - i - 1);
+        }
+        
+        String reverse = "";
+        for (int i = 0; i < n; i++) {
+            reverse += reverseArray[i];
+        }
+        
+        System.out.println(reverse);
+       
+        for (int i = 0; i < n; i++) {
+            if (a.charAt(i) != reverse.charAt(i)) {
+                System.out.println("Not a palindrome");
+                return; 
+            }
+        }
+        
+        System.out.println("It is a palindrome");
+    }
+}
+palindrome with string buffer
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        
+        StringBuffer reverseBuffer = new StringBuffer(a);
+        String reverse = reverseBuffer.reverse().toString();
+        
+        System.out.println(reverse);
+        
+        if (a.equals(reverse)) {
+            System.out.println("It is a palindrome");
+        } else {
+            System.out.println("Not a palindrome");
+        }
+    }
+}
